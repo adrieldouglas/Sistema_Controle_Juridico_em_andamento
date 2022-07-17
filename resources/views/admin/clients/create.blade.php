@@ -25,6 +25,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12">
+                        @if ($errors->all())
+                        @foreach ($errors->all() as $error)
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong><i class="bi bi-check2-circle"></i> {{ $error }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endforeach
+                        @endif
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
@@ -294,20 +306,14 @@ Estrangeiro
 </div>
 <div class="col-sm-4">
     <p>Entidade do cliente</p>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="entity"
-        id="entity" value="Pessoa Física">
-        <label class="form-check-label" for="entity">
-            Pessoa Física
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="entity"
-        id="entity" checked value="Pessoa Jurídica">
-        <label class="form-check-label" for="entity">
-            Pessoa Jurídica
-        </label>
-    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="entity" name="entity" value="Pessoa Física">
+      <label class="form-check-label" for="entity"> Pessoa Física</label>
+  </div>
+  <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="entity" name="entity" value="Pessoa Jurídica">
+      <label class="form-check-label" for="entity">Pessoa Jurídica</label>
+  </div>
 </div>
 <div class="col-sm-4">
     <div class="form-group">
@@ -437,8 +443,15 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-3">
         <div class="form-group">
             <label for="document_pis">PIS</label>
-            <input type="text" name="document_pis" class="form-control"
+            <input type="text" name="document_pis" class="form-control {{ $errors->has('document_pis') ? 'is-invalid' : '' }}"
             placeholder="Numero do PIS" style="border-color: orange;">
+
+            @if ($errors->has('document_pis'))
+            <div class="invalid-feedback">
+                <i class="bi bi-exclamation-triangle"></i>
+                {{ $errors->first('document_pis') }}
+            </div>
+            @endif
         </div>
     </div>
     <div class="col-sm-3">

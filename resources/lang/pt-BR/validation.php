@@ -186,7 +186,9 @@ return [
         'description' => 'descrição',
         'password_confirmation' => 'confirmação da senha',
         'current_password' => 'senha atual',
-        'document_cpf' => 'CPF'
+        'document_cpf' => 'CPF',
+        'document_rg' => 'RG',
+        'document_pis' => 'PIS'
     ],
 
 ];
