@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 		/* ROTAS CLIENT */
 		Route::get('clients', 'ClientController@index')->name('clients.index');
 		Route::get('clients/create', 'ClientController@create')->name('clients.create');
-        Route::post('clients/store', 'ClientController@store')->name('clients.store');
+		Route::post('clients/store', 'ClientController@store')->name('clients.store');
 
 
 	});

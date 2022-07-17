@@ -25,7 +25,10 @@ class Client extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:166',
-            'document_cpf' => 'unique:clients'
+            'document_cpf' => (!empty($this->request->all()['id']) ? 'required|min:14|max:14|unique:clients,document_cpf,' . $this->request->all()['id'] : 'required|min:14|max:14|unique:clients,document_cpf'),
+            'email' => 'required|email',
+            'document_rg' => (!empty($this->request->all()['id']) ? 'required|unique:clients,document_rg,' . $this->request->all()['id'] : 'required|unique:clients,document_rg')
+
         ];
     }
 }

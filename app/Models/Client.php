@@ -42,10 +42,10 @@ class Client extends Model
 
 	// Limpando virgulas e traços para salvar no banco de dados
 
-	public function setDocumentCpfAttribute($value)
-	{
-		$this->attributes['document_cpf'] = $this->clearField($value);
-	}
+	// public function setDocumentCpfAttribute($value)
+	// {
+	// 	$this->attributes['document_cpf'] = $this->clearField($value);
+	// }
 
     public function setPhoneAttribute($value)
 	{

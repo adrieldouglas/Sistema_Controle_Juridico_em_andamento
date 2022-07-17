@@ -59,7 +59,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nome do cliente</th>
                                     <th scope="col">E-mail</th>
-                                    <th scope="col">Telefone</th>
+                                    <th scope="col">CPF</th>
                                     <th scope="col">Opções</th>
                                 </tr>
                             </thead>
@@ -71,7 +71,7 @@
                                                 class="bi bi-pencil-fill"></i> {{ $client->name }}</a></td>
                                     <td><a href="mailto:{{ $client->email }}" class="text-danger" data-toggle="email" title="Enviar e-mail"><i
                                                 class="bi bi-envelope-paper-fill"></i> {{ $client->email }}</a></td>
-                                    <td>{{ $client->phone }}</td>
+                                    <td>{{ $client->document_cpf }}</td>
                                     <td>
                                         <a href="" data-toggle="view" title="Visualizar"><i
                                                 class="bi bi-eye-fill text-warning"></i></a>

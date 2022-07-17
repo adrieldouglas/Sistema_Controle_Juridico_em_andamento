@@ -85,9 +85,17 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="email">E-mail</label>
-                                                        <input type="email" name="email" class="form-control"
+                                                        <label for="email">E-mail<i class="bi bi-asterisk text-danger small"></i></label>
+                                                        <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                                         placeholder="Digite o e-mail" style="border-color: orange;">
+
+
+                                                        @if ($errors->has('email'))
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-triangle"></i>
+                                                            {{ $errors->first('email') }}
+                                                        </div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -401,17 +409,29 @@ aria-labelledby="nav-documentation-tab">
 <div class="row mt-3">
     <div class="col-sm-3">
         <div class="form-group">
-            <label for="document_cpf">CPF</label>
-            <input type="text" name="document_cpf" class="form-control"
-            placeholder="____.____.____-___" data-mask="000.000.000-00"
+            <label for="document_cpf">CPF<i class="bi bi-asterisk text-danger small"></i></label>
+            <input type="text" name="document_cpf" class="form-control {{ $errors->has('document_cpf') ? 'is-invalid' : '' }}" placeholder="____.____.____-___" data-mask="000.000.000-00"
             style="border-color: orange;">
+
+            @if ($errors->has('document_cpf'))
+            <div class="invalid-feedback">
+                <i class="bi bi-exclamation-triangle"></i>
+                {{ $errors->first('document_cpf') }}
+            </div>
+            @endif
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
             <label for="document_rg">RG</label>
-            <input type="text" name="document_rg" class="form-control"
-            placeholder="Numero /emissor / emissão" style="border-color: orange;">
+            <input type="text" name="document_rg" class="form-control {{ $errors->has('document_rg') ? 'is-invalid' : '' }}" placeholder="Numero /emissor / emissão" style="border-color: orange;">
+
+            @if ($errors->has('document_rg'))
+            <div class="invalid-feedback">
+                <i class="bi bi-exclamation-triangle"></i>
+                {{ $errors->first('document_rg') }}
+            </div>
+            @endif
         </div>
     </div>
     <div class="col-sm-3">
