@@ -9,41 +9,60 @@ use App\Http\Requests\Admin\Client as ClientRequest;
 
 class ClientController extends Controller
 {
-   public function index ()
-   {
-   	$tit_client = "Clientes";
+ public function index ()
+ {
+  $tit_client = "Clientes";
 
-    $clients = Client::all();
+  $clients = Client::all();
 
-   	return view ('admin.clients.index', [
-   		'tit_client' => $tit_client,
-        'clients' => $clients
-   	]);
-   }
+  return view ('admin.clients.index', [
+   'tit_client' => $tit_client,
+   'clients' => $clients
+ ]);
+}
 
-   public function create ()
-   {
-   	$tit_novo = "Novo Cliente";
-   	return view ('admin.clients.create', [
-   		'tit_novo' => $tit_novo
-   	]);
-   }
+public function create ()
+{
+  $tit_novo = "Novo Cliente";
+  return view ('admin.clients.create', [
+   'tit_novo' => $tit_novo
+ ]);
+}
 
-   public function store(ClientRequest $request)
-   {
+public function store(ClientRequest $request)
+{
+  $clientCreate = Client::create(
+    $request->all()
+  );
+
+  if(!empty($request->file('cover'))){
+    $clientCreate->cover = $request->file('cover')->store('client');
+    $clientCreate->save();
+  }
+  return redirect()->route('admin.clients.index')->withErrors('Salvo com sucesso');
+
+
     //    $client = new Client();
     //    $client->fill($request->all());
     //    dd($client->getAttributes(), $request->all());
 
-    $clientCreate = CLient::create(
-        $request->all()
-    );
+}
 
-    if(!empty($request->file('cover'))){
-        $clientCreate->cover = $request->file('cover')->store('client');
-        $clientCreate->save();
-    }
-    return redirect()->route('admin.clients.index')->withErrors('Salvo com sucesso');
+public function edit ($id){
 
-   }
+  $client = Client::where('id', $id)->first();
+
+  return view ('admin.clients.edit', [
+    'client' => $client
+  ]);
+}
+
+public function destroy($id)
+{
+  $client = Client::find($id);
+  $client->delete();
+
+  return redirect()->route('admin.clients.index')->withErrors('Deletado com sucesso');
+}
+
 }

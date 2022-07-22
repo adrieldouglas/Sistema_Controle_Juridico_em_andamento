@@ -18,7 +18,8 @@ class Client extends Model
         'complement',
         'cover',
         'state',
-        'entity',
+        'physical',
+        'legal',
         'site',
         'birth',
         'company',
@@ -48,18 +49,28 @@ class Client extends Model
 	// }
 
     public function setPhoneAttribute($value)
-	{
-		$this->attributes['phone'] = $this->clearField($value);
-	}
+    {
+      $this->attributes['phone'] = $this->clearField($value);
+  }
 
-	private function clearField(?string $param)
-	{
-		if (empty($param)) {
-			return '';
-		}else {
-			return str_replace(['.', '-', '/', '(', ')', ' '], '', $param);
-		}
-	}
+  private function clearField(?string $param)
+  {
+      if (empty($param)) {
+         return '';
+     }else {
+         return str_replace(['.', '-', '/', '(', ')', ' '], '', $param);
+     }
+ }
 
 	//end limpando
+
+ public function setPhysicalAttribute($value)
+ {
+    $this->attributes['physical'] = ($value === true || $value === 'on' ? 1 : 0);
+}
+
+public function setLegalAttribute($value)
+{
+    $this->attributes['legal'] = ($value === true || $value === 'on' ? 1 : 0);
+}
 }

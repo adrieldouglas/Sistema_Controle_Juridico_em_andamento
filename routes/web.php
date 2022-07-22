@@ -39,6 +39,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 		Route::get('clients', 'ClientController@index')->name('clients.index');
 		Route::get('clients/create', 'ClientController@create')->name('clients.create');
 		Route::post('clients/store', 'ClientController@store')->name('clients.store');
+		Route::get('clients/edit/{id}', 'ClientController@edit')->name('clients.edit');
+		Route::delete('clients/destroy/{id}', 'ClientController@destroy')->name('clients.destroy');
+
 
 
 	});
