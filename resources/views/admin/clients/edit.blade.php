@@ -2,12 +2,15 @@
 
 @section('content')
 
+<title>{{ $tit_edit }} {{ $client->name }}</title>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
             <div class="card mt-4">
                 <div class="card-body">
-                  <img src="{{ url('storage/' . $client->cover) }}" class="rounded img-fluid float-right" alt="perfil" width="50">
+               <a href="" data-toggle="modal" data-target="#person{{ $client->id }}"><img src="{{ url('storage/' . $client->cover) }}" class="rounded img-fluid float-right" alt="perfil" width="50"></a>
+               @include('admin.clients.person')
                   <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link text-muted" href="{{ route('admin.home') }}"><i
@@ -339,7 +342,7 @@ aria-labelledby="nav-additional-information-tab">
     <div class="col-sm-5">
         <label for="profession">Profissão</label>
         <input type="text" name="profession" class="form-control"
-        placeholder="Digite a profissão" style="border-color: orange;" value="{{ old('profession') }}">
+        placeholder="Digite a profissão" style="border-color: orange;" value="{{ old('profession') ?? $client->profession }}">
     </div>
 </div>
 <div class="row mt-3">
@@ -347,7 +350,7 @@ aria-labelledby="nav-additional-information-tab">
         <label for="economic_activity">Atividade Econômica</label>
         <input type="text" name="economic_activity" class="form-control"
         placeholder="Digite o código da atividade econômica"
-        style="border-color: orange;" value="{{ old('economic_activity') }}">
+        style="border-color: orange;" value="{{ old('economic_activity') ?? $client->economic_activity }}">
     </div>
     <div class="col-sm-4">
         <div class="form-group">
@@ -355,10 +358,10 @@ aria-labelledby="nav-additional-information-tab">
             <select id="marital_status" name="marital_status" class="form-control"
             style="border-color: orange;">
             <option selected disabled="">Selecionar</option>
-            <option value="Casado" @if (old('marital_status') == 'Casado') selected="selected" @endif>Casado</option>
-            <option value="Divorciado" @if (old('marital_status') == 'Divorciado') selected="selected" @endif>Divorciado</option>
-            <option value="Viúvo" @if (old('marital_status') == 'Viúvo') selected="selected" @endif>Viúvo</option>
-            <option value="Solteiro" @if (old('marital_status') == 'Solteiro') selected="selected" @endif>Solteiro</option>
+            <option value="Casado" {{ (old('marital_status') == 'Casado' ? 'selected' : ($client->marital_status == 'Casado' ? 'selected' : '')) }}>Casado</option>
+            <option value="Divorciado" {{ (old('marital_status') == 'Divorciado' ? 'selected' : ($client->marital_status == 'Divorciado' ? 'selected' : '')) }}>Divorciado</option>
+            <option value="Viúvo" {{ (old('marital_status') == 'Viúvo' ? 'selected' : ($client->marital_status == 'Viúvo' ? 'selected' : '')) }}>Viúvo</option>
+            <option value="Solteiro" {{ (old('marital_status') == 'Solteiro' ? 'selected' : ($client->marital_status == 'Solteiro' ? 'selected' : '')) }}>Solteiro</option>
         </select>
     </div>
 </div>
@@ -366,7 +369,7 @@ aria-labelledby="nav-additional-information-tab">
     <div class="form-group">
         <label for="parentage">Filiação</label>
         <textarea class="form-control" id="parentage" name="parentage" rows="2"
-        placeholder="Nome da mãe, nome do pai" style="border-color: orange;">{{ old('parentage') }}</textarea>
+        placeholder="Nome da mãe, nome do pai" style="border-color: orange;">{{ old('parentage') ?? $client->parentage }}</textarea>
     </div>
 </div>
 </div>

@@ -50,10 +50,12 @@ public function store(ClientRequest $request)
 
 public function edit ($id){
 
+  $tit_edit = 'Editar';
   $client = Client::where('id', $id)->first();
 
   return view ('admin.clients.edit', [
-    'client' => $client
+    'client' => $client,
+    'tit_edit' => $tit_edit
   ]);
 }
 
