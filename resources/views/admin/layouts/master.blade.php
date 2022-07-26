@@ -13,9 +13,9 @@
 	@endif
 
 </head>
-<body style="background-color: #6B767F;">
+<body style="background-color: #008B8B;">
 
-	<nav class="navbar navbar-expand-sm navbar-light bg-light">
+	<nav class="navbar navbar-expand-sm navbar-light bg-warning">
 		<a class="navbar-brand" href="{{ route('admin.home') }}"><img src="{{ url('assets/logotipo/logotipo.png') }}" width="35"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -51,20 +51,20 @@
 					<a class="nav-link" href=""><i class="bi bi-file-text-fill"></i> Documentos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href=""><i class="bi bi-pie-chart-fill"></i> Gráficos</a>
+					<a class="nav-link" href=""><i class="bi bi-bank2"></i> Contratos</a>
 				</li>
-					<li class="nav-item">
+				<li class="nav-item">
 					<a class="nav-link" href=""><i class="bi bi-file-pdf-fill"></i> Relatórios</a>
 				</li>
 			</ul>
 
 			<div>
 				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-						<i class="bi bi-person-fill"></i> {{ Auth:: user()->name }}
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+						Logado <i class="bi bi-person-fill"></i> 
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a href="{{ route('admin.logout') }}" class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Sair</a>
+						<a href="" class="dropdown-item" data-toggle="modal" data-target="#logout"><i class="bi bi-box-arrow-right"></i> Sair</a>
 					</div>
 				</div>
 			</div>
@@ -72,14 +72,37 @@
 	</nav>
 
 
+	<!-- Modal -->
+	<div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header bg-warning">
+					<h5 class="modal-title text-white"><i class="bi bi-door-closed-fill"></i> Encerrar Sessão</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-muted">
+					Deseja sair do sistema {{ Auth:: user()->name }}?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal"><i class="bi bi-x-square-fill"></i> Não</button>
+					<a href="{{ route('admin.logout') }}" class="btn btn-warning btn-lg text-white"><i class="bi bi-box-arrow-right"></i> Sim</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 	@yield('content')
 
 
 
-	<script src="{{ url(mix('assets/js/jquery.js')) }}"></script>
+	<script src="{{ url(mix('assets/js/jquery.js')) }}"></script> 
 	<script src="{{ url(mix('assets/js/bundle.js')) }}"></script>
-    <script src="{{ url(mix('assets/js/jquery.mask.js')) }}"></script>
+	<script src="{{ url(mix('assets/js/jquery.mask.js')) }}"></script>
+	<script src="{{ url(mix('assets/js/canvasjs.js')) }}"></script>
 
 	@hasSection('script')
 	@yield('script')

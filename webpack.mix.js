@@ -38,6 +38,10 @@ mix
         'resources/views/admin/assets/js/jquery.mask.js'
     ], 'public/assets/js/jquery.mask.js')
 
+      .scripts([
+        'resources/views/admin/assets/js/canvasjs.min.js'
+    ], 'public/assets/js/canvasjs.js')
+
     .copyDirectory('resources/views/admin/assets/background', 'public/assets/background')
     .copyDirectory('resources/views/admin/assets/logotipo', 'public/assets/logotipo')
 

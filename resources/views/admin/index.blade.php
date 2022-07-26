@@ -31,13 +31,13 @@
 <body style="background-color: #6B767F;">
 <div class="ajax_response"></div>
     <div class="container">
-        <div class="row justify-content-end">
+        <div class="row justify-content-start">
             <div class="col-md-5">
                 <div class="card" style="margin-top: 10%; border-color: blue;">
-                    <div class="card-header">Entrar</div>
+                    <div class="card-header bg-warning text-white">Entrar</div>
                     <div class="card-body">                                         
-                    <img src="{{ url('assets/logotipo/logotipo.png') }}" class="rounded mx-auto d-block img-fluid" width="130" alt="logotipo">   
-                     <h5 class="text-danger font-weight-bold text-center mt-2">Company Adriel Douglas</h5>          
+                    <img src="{{ url('assets/logotipo/logotipo.png') }}" class="rounded mx-auto d-block img-fluid" width="100" alt="logotipo">   
+                     <h5 class="text-warning font-weight-bold text-center mt-2">Sistema Jurídico</h5>          
                          <form name="login" action="{{ route('admin.login.do') }}" method="post" autocomplete="off">                   
                             <div class="form-group row">
                                 <div class="col-md-12">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-12">
-                                    <button class="btn btn-success btn-lg float-right radius" data-toggle="tooltip" title="Logar Agora">
+                                    <button class="btn btn-warning text-white btn-lg float-right radius" data-toggle="tooltip" title="Logar Agora">
                                     <i class="bi bi-check2-square"></i> ACESSAR
                                  </button>                                  
                              </div>

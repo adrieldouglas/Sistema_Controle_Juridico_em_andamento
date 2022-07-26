@@ -7,7 +7,7 @@
         <div class="col-sm-12">
             <div class="card mt-4">
                 <div class="card-body">
-                  <img src="{{ url('storage/' . $client->cover) }}" class="rounded img-fluid float-right" alt="perfil" width="30">
+                  <img src="{{ url('storage/' . $client->cover) }}" class="rounded img-fluid float-right" alt="perfil" width="50">
                   <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link text-muted" href="{{ route('admin.home') }}"><i
@@ -111,14 +111,14 @@
                                             <div class="form-group">
                                                 <label for="address">Endereço</label>
                                                 <input type="text" name="address" class="form-control"
-                                                placeholder="Digite o endereço" style="border-color: orange;" value="{{ old('address') }}">
+                                                placeholder="Digite o endereço" style="border-color: orange;" value="{{ old('address') ?? $client->address }}">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="neighborhood">Bairro</label>
                                                 <input type="text" name="neighborhood" class="form-control"
-                                                placeholder="Digite o bairro" style="border-color: orange;" value="{{ old('neighborhood') }}">
+                                                placeholder="Digite o bairro" style="border-color: orange;" value="{{ old('neighborhood') ?? $client->neighborhood }}">
                                             </div>
                                         </div>
                                     </div>
@@ -127,14 +127,14 @@
                                             <div class="form-group">
                                                 <label for="city">Cidade</label>
                                                 <input type="text" name="city" class="form-control"
-                                                placeholder="Digite o cidade" style="border-color: orange;" value="{{ old('city') }}">
+                                                placeholder="Digite o cidade" style="border-color: orange;" value="{{ old('city') ?? $client->city }}">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="complement">Complemento</label>
                                                 <input type="text" name="complement" class="form-control"
-                                                placeholder="Digite o complemento" style="border-color: orange;" value="{{ old('complement') }}">
+                                                placeholder="Digite o complemento" style="border-color: orange;" value="{{ old('complement') ?? $client->complement }}">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -150,7 +150,7 @@
                                                 <label for="state">Estado</label>
                                                 <select id="state" name="state" class="form-control"
                                                 style="border-color: orange;">
-                                                <option selected disabled="">Selecionar</option>
+                                                <option selected class="text-danger">{{ $client->state}}</option>
                                                 <option value="AC"
                                                 @if (old('state') == 'AC') selected="selected" @endif>
                                                 Acre
@@ -304,11 +304,11 @@ Estrangeiro
 <div class="col-sm-4">
     <p>Entidade do cliente</p>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="physical" name="physical" {{ (old('physical') == 'on' || old('physical') == true ? 'checked' : '' ) }}>
+      <input class="form-check-input" type="checkbox" id="physical" name="physical" {{ (old('physical') == 'on' || old('physical') == true ? 'checked' : ($client->physical == true ? 'checked' : '')) }}>
       <label class="form-check-label" for="physical"> Pessoa Física</label>
   </div>
   <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="legal" name="legal" {{ (old('legal') == 'on' || old('legal') == true ? 'checked' : '' ) }}>
+      <input class="form-check-input" type="checkbox" id="legal" name="legal" {{ (old('legal') == 'on' || old('legal') == true ? 'checked' : ($client->legal == true ? 'checked' : '')) }}>
       <label class="form-check-label" for="legal">Pessoa Jurídica</label>
   </div>
 </div>
@@ -316,7 +316,7 @@ Estrangeiro
     <div class="form-group">
         <label for="site">Site</label>
         <input type="text" name="site" class="form-control"
-        placeholder="Digite o site" style="border-color: orange;" value="{{ old('site') }}">
+        placeholder="Digite o site" style="border-color: orange;" value="{{ old('site') ?? $client->site }}">
     </div>
 </div>
 </div>
@@ -329,12 +329,12 @@ aria-labelledby="nav-additional-information-tab">
     <div class="col-sm-3">
         <label for="birth">Nascimento</label>
         <input type="date" name="birth" class="form-control"
-        style="border-color: orange;" value="{{ old('birth') }}">
+        style="border-color: orange;" value="{{ old('birth') ?? $client->birth }}">
     </div>
     <div class="col-sm-4">
         <label for="company">Empresa</label>
         <input type="text" name="company" class="form-control"
-        placeholder="Digite a empresa" style="border-color: orange;" value="{{ old('company') }}">
+        placeholder="Digite a empresa" style="border-color: orange;" value="{{ old('company') ?? $client->company }}">
     </div>
     <div class="col-sm-5">
         <label for="profession">Profissão</label>
@@ -495,8 +495,8 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-12">
         <div class="card mt-2">
             <div class="card-body text-center">
-                <button type="submit" class="btn btn-lg btn-success" data-toggle="save"
-                title="Salvar informações"><i class="bi bi-check2-circle"></i> SALVAR</button>
+                <button type="submit" class="btn btn-lg btn-warning text-white" data-toggle="save"
+                title="Salvar informações"><i class="bi bi-check2-circle"></i> Atualizar</button>
             </div>
         </div>
     </div>

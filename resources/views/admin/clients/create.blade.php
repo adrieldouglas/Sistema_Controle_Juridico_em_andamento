@@ -496,7 +496,7 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-12">
         <div class="card mt-2">
             <div class="card-body text-center">
-                <button type="submit" class="btn btn-lg btn-success" data-toggle="save"
+                <button type="submit" class="btn btn-lg btn-warning text-white" data-toggle="save"
                 title="Salvar informações"><i class="bi bi-check2-circle"></i> SALVAR</button>
             </div>
         </div>

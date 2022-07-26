@@ -29,8 +29,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <a href="{{ route('admin.login') }}" class="btn btn-lg bg-danger text-white float-right" style="margin-top: 40%;"><i class="bi bi-box-arrow-right"></i> ACESSAR</a>
+      <div class="col-sm-12">        
+        <h1 class="text-right display-2 font-weight-bold text-warning" style="margin-top: 25%;">Controle Jurídico</h1>
+        <h1 class="text-warning text-right font-weight-bold">Company Adriel Douglas</h1>
+        <a href="{{ route('admin.login') }}" class="btn btn-lg bg-warning text-white float-right"><i class="bi bi-box-arrow-right"></i> ACESSAR</a>
       </div>
     </div>
   </div>
