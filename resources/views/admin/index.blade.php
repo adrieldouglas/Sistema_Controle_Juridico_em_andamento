@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="{{ url('assets/logotipo/logotipo.png') }}"/>    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">  
-
+<!-- 
     <style type="text/css">
         video {
             object-fit: cover;
@@ -23,7 +23,7 @@
     </style>
 
     <video playsinline autoplay muted loop poster="{{ url('assets/background/login_bg.jpg') }}">
-    </video>
+    </video> -->
 
     <title>{{  $tit_login }}</title>
 
@@ -31,18 +31,18 @@
 <body style="background-color: #6B767F;">
 <div class="ajax_response"></div>
     <div class="container">
-        <div class="row justify-content-start">
+        <div class="row justify-content-center">
             <div class="col-md-5">
-                <div class="card" style="margin-top: 10%; border-color: blue;">
-                    <div class="card-header bg-warning text-white">Entrar</div>
+                <div class="card" style="margin-top: 10%;">
+                    <div class="card-header">Entrar</div>
                     <div class="card-body">                                         
                     <img src="{{ url('assets/logotipo/logotipo.png') }}" class="rounded mx-auto d-block img-fluid" width="100" alt="logotipo">   
-                     <h5 class="text-warning font-weight-bold text-center mt-2">Sistema Jurídico</h5>          
+                     <h5 class="text-muted font-weight-bold text-center mt-2">Sistema Jurídico</h5>          
                          <form name="login" action="{{ route('admin.login.do') }}" method="post" autocomplete="off">                   
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="email" class="font-weight-bold"><i class="bi bi-person-heart"></i> E-mail</label>
-                                    <input id="email" type="email" class="form-control-lg form-control" name="email" placeholder="E-mail de acesso" style="border-color: orange;">
+                                    <input id="email" type="email" class="form-control-lg form-control" name="email" placeholder="E-mail de acesso">
                                 </div>
                             </div>
 
@@ -50,7 +50,7 @@
                                 <div class="col-md-12">
                                     <label for="password" class="font-weight-bold"><i class="bi bi-key-fill"></i> Senha</label>
                                     <input id="password" type="password" class="form-control-lg form-control"
-                                    name="password_check" placeholder="Senha de acesso" style="border-color: orange;">
+                                    name="password_check" placeholder="Senha de acesso">
                                 </div>
                             </div>
                             <div class="row">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-12">
-                                    <button class="btn btn-warning text-white btn-lg float-right radius" data-toggle="tooltip" title="Logar Agora">
+                                    <button class="btn btn-primary btn-lg float-right radius" data-toggle="tooltip" title="Logar Agora">
                                     <i class="bi bi-check2-square"></i> ACESSAR
                                  </button>                                  
                              </div>

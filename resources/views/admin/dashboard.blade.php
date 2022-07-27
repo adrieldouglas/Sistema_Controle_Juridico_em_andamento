@@ -7,20 +7,20 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<div class="card mt-4" style="border-color: #FFD700;">
+			<div class="card mt-4">
 				<img src="{{ url('assets/logotipo/logotipo.png') }}" class="rounded mx-auto d-block img-fluid mt-3" width="100" alt="logotipo"> 
-				<h5 class="text-warning font-weight-bold text-center mt-2" >Controle Jurídico</h5>				
+				<h5 class="text-muted font-weight-bold text-center mt-2" >Controle Jurídico</h5>				
 			</div>
 		</div>
 		<div class="col-sm-9">
-			<div class="card mt-4" style="border-color: #FFD700;">
+			<div class="card mt-4">
 				<div id="chart" style="height: 165px; width: 100%;"></div>			
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-3">
-			<div class="card mt-2" style="border-color: #FFD700;">
+			<div class="card mt-2">
 				<div class="card-body">
 					<table class="table table-hover">
 						<thead>
@@ -44,14 +44,14 @@
 			</div>
 		</div>
 		<div class="col-sm-9">
-			<div class="card mt-2" style="border-color: #FFD700;">
+			<div class="card mt-2">
 				<div class="card-body">
-					<h4 class="text-muted"><i class="bi bi-list-task"></i> Tarefas <a href="" class="float-right btn btn-warning text-white btn-lg"><i class="bi bi-plus-square"></i> Adicionar</a></h4>
+					<h4 class="text-muted"><i class="bi bi-list-task"></i> Tarefas <a href="" class="float-right btn btn-primary btn-lg"><i class="bi bi-plus-square"></i> Adicionar</a></h4>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-inline">
-								<input type="search" name="" class="form-control form-control-sm" placeholder="Buscar" style="border-color: orange;">
-								<button type="submit" class="btn btn-sm btn-warning"><i class="bi bi-search text-white"></i></button>
+								<input type="search" name="" class="form-control form-control-sm" placeholder="Buscar">
+								<button type="submit" class="btn btn-sm btn-primary"><i class="bi bi-search text-white"></i></button>
 							</div>
 						</div>
 					</div>

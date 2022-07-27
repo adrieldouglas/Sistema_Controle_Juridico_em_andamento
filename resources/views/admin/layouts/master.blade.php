@@ -13,9 +13,9 @@
 	@endif
 
 </head>
-<body style="background-color: #008B8B;">
+<body class="bg-dark">
 
-	<nav class="navbar navbar-expand-sm navbar-light bg-warning">
+	<nav class="navbar navbar-expand-sm navbar-light bg-light">
 		<a class="navbar-brand" href="{{ route('admin.home') }}"><img src="{{ url('assets/logotipo/logotipo.png') }}" width="35"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -60,7 +60,7 @@
 
 			<div>
 				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+					<a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
 						Logado <i class="bi bi-person-fill"></i> 
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -76,8 +76,8 @@
 	<div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<div class="modal-header bg-warning">
-					<h5 class="modal-title text-white"><i class="bi bi-door-closed-fill"></i> Encerrar Sessão</h5>
+				<div class="modal-header">
+					<h5 class="modal-title"><i class="bi bi-door-closed-fill"></i> Encerrar Sessão</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -87,7 +87,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal"><i class="bi bi-x-square-fill"></i> Não</button>
-					<a href="{{ route('admin.logout') }}" class="btn btn-warning btn-lg text-white"><i class="bi bi-box-arrow-right"></i> Sim</a>
+					<a href="{{ route('admin.logout') }}" class="btn btn-primary btn-lg"><i class="bi bi-box-arrow-right"></i> Sim</a>
 				</div>
 			</div>
 		</div>

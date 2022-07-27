@@ -67,7 +67,7 @@
                                                 <div class="form-group">
                                                     <label for="name">Nome Completo<i
                                                         class="bi bi-asterisk text-danger small"></i></label>
-                                                        <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="Digite o nome" style="border-color: orange;" value="{{ old('name') }}">
+                                                        <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="Digite o nome" value="{{ old('name') }}">
 
                                                         @if ($errors->has('name'))
                                                         <div class="invalid-feedback">
@@ -81,7 +81,7 @@
                                                     <div class="form-group">
                                                         <label for="nickname">Apelido</label>
                                                         <input type="text" name="nickname" class="form-control"
-                                                        placeholder="Digite o apelido" style="border-color: orange;" value="{{ old('nickname') }}">
+                                                        placeholder="Digite o apelido" value="{{ old('nickname') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -89,7 +89,7 @@
                                                         <label for="phone">Celular</label>
                                                         <input type="text" name="phone" class="form-control"
                                                         placeholder="55 (__) _____-____" data-mask="55 (00) 0 - 0000-0000"
-                                                        style="border-color: orange;" value="{{ old('phone') }}">
+                                                        value="{{ old('phone') }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,7 +97,7 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label for="email">E-mail<i class="bi bi-asterisk text-danger small"></i></label>
-                                                        <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Digite o e-mail" style="border-color: orange;" value="{{ old('email') }}">
+                                                        <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Digite o e-mail" value="{{ old('email') }}">
 
 
                                                         @if ($errors->has('email'))
@@ -112,14 +112,14 @@
                                                     <div class="form-group">
                                                         <label for="address">Endereço</label>
                                                         <input type="text" name="address" class="form-control"
-                                                        placeholder="Digite o endereço" style="border-color: orange;" value="{{ old('address') }}">
+                                                        placeholder="Digite o endereço" value="{{ old('address') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label for="neighborhood">Bairro</label>
                                                         <input type="text" name="neighborhood" class="form-control"
-                                                        placeholder="Digite o bairro" style="border-color: orange;" value="{{ old('neighborhood') }}">
+                                                        placeholder="Digite o bairro" value="{{ old('neighborhood') }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,14 +128,14 @@
                                                     <div class="form-group">
                                                         <label for="city">Cidade</label>
                                                         <input type="text" name="city" class="form-control"
-                                                        placeholder="Digite o cidade" style="border-color: orange;" value="{{ old('city') }}">
+                                                        placeholder="Digite o cidade" value="{{ old('city') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label for="complement">Complemento</label>
                                                         <input type="text" name="complement" class="form-control"
-                                                        placeholder="Digite o complemento" style="border-color: orange;" value="{{ old('complement') }}">
+                                                        placeholder="Digite o complemento" value="{{ old('complement') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -149,85 +149,84 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label for="state">Estado</label>
-                                                        <select id="state" name="state" class="form-control"
-                                                        style="border-color: orange;">
-                                                        <option selected disabled="">Selecionar</option>
-                                                        <option value="AC"
-                                                        @if (old('state') == 'AC') selected="selected" @endif>
-                                                        Acre
+                                                        <select id="state" name="state" class="form-control">
+                                                            <option selected disabled="">Selecionar</option>
+                                                            <option value="AC"
+                                                            @if (old('state') == 'AC') selected="selected" @endif>
+                                                            Acre
+                                                        </option>
+
+                                                        <option value="AL"
+                                                        @if (old('state') == 'AL') selected="selected" @endif>
+                                                        Alagoas
                                                     </option>
 
-                                                    <option value="AL"
-                                                    @if (old('state') == 'AL') selected="selected" @endif>
-                                                    Alagoas
+                                                    <option value="AP"
+                                                    @if (old('state') == 'AP') selected="selected" @endif>
+                                                    Amapá
                                                 </option>
 
-                                                <option value="AP"
-                                                @if (old('state') == 'AP') selected="selected" @endif>
-                                                Amapá
+                                                <option value="AM"
+                                                @if (old('state') == 'AM') selected="selected" @endif>
+                                                Amazonas
                                             </option>
 
-                                            <option value="AM"
-                                            @if (old('state') == 'AM') selected="selected" @endif>
-                                            Amazonas
+                                            <option value="BA"
+                                            @if (old('state') == 'BA') selected="selected" @endif>
+                                            Bahia
                                         </option>
 
-                                        <option value="BA"
-                                        @if (old('state') == 'BA') selected="selected" @endif>
-                                        Bahia
+                                        <option value="CE"
+                                        @if (old('state') == 'CE') selected="selected" @endif>
+                                        Ceará
                                     </option>
 
-                                    <option value="CE"
-                                    @if (old('state') == 'CE') selected="selected" @endif>
-                                    Ceará
+                                    <option value="DF"
+                                    @if (old('state') == 'DF') selected="selected" @endif>
+                                    Distrito Federal
                                 </option>
 
-                                <option value="DF"
-                                @if (old('state') == 'DF') selected="selected" @endif>
-                                Distrito Federal
+                                <option value="ES"
+                                @if (old('state') == 'ES') selected="selected" @endif>
+                                Espírito Santo
                             </option>
 
-                            <option value="ES"
-                            @if (old('state') == 'ES') selected="selected" @endif>
-                            Espírito Santo
+                            <option value="GO"
+                            @if (old('state') == 'GO') selected="selected" @endif>
+                            Goiás
                         </option>
 
-                        <option value="GO"
-                        @if (old('state') == 'GO') selected="selected" @endif>
-                        Goiás
+                        <option value="MA"
+                        @if (old('state') == 'MA') selected="selected" @endif>
+                        Maranhão
                     </option>
 
-                    <option value="MA"
-                    @if (old('state') == 'MA') selected="selected" @endif>
-                    Maranhão
+                    <option value="MT"
+                    @if (old('state') == 'MT') selected="selected" @endif>
+                    Mato
+                    Grosso
                 </option>
 
-                <option value="MT"
-                @if (old('state') == 'MT') selected="selected" @endif>
+                <option value="MS"
+                @if (old('state') == 'MS') selected="selected" @endif>
                 Mato
-                Grosso
+                Grosso do Sul
             </option>
 
-            <option value="MS"
-            @if (old('state') == 'MS') selected="selected" @endif>
-            Mato
-            Grosso do Sul
+            <option value="MG"
+            @if (old('state') == 'MG') selected="selected" @endif>
+            Minas
+            Gerais
         </option>
 
-        <option value="MG"
-        @if (old('state') == 'MG') selected="selected" @endif>
-        Minas
-        Gerais
+        <option value="PA"
+        @if (old('state') == 'PA') selected="selected" @endif>
+        Pará
     </option>
 
-    <option value="PA"
-    @if (old('state') == 'PA') selected="selected" @endif>
-    Pará
-</option>
-
-<option value="PB"
-@if (old('state') == 'PB') selected="selected" @endif>
-Paraíba
+    <option value="PB"
+    @if (old('state') == 'PB') selected="selected" @endif>
+    Paraíba
 </option>
 
 <option value="PR"
@@ -316,8 +315,7 @@ Estrangeiro
 <div class="col-sm-4">
     <div class="form-group">
         <label for="site">Site</label>
-        <input type="text" name="site" class="form-control"
-        placeholder="Digite o site" style="border-color: orange;" value="{{ old('site') }}">
+        <input type="text" name="site" class="form-control" placeholder="Digite o site" value="{{ old('site') }}">
     </div>
 </div>
 </div>
@@ -329,32 +327,27 @@ aria-labelledby="nav-additional-information-tab">
 <div class="row mt-3">
     <div class="col-sm-3">
         <label for="birth">Nascimento</label>
-        <input type="date" name="birth" class="form-control"
-        style="border-color: orange;" value="{{ old('birth') }}">
+        <input type="date" name="birth" class="form-control" value="{{ old('birth') }}">
     </div>
     <div class="col-sm-4">
         <label for="company">Empresa</label>
-        <input type="text" name="company" class="form-control"
-        placeholder="Digite a empresa" style="border-color: orange;" value="{{ old('company') }}">
+        <input type="text" name="company" class="form-control" placeholder="Digite a empresa" value="{{ old('company') }}">
     </div>
     <div class="col-sm-5">
         <label for="profession">Profissão</label>
-        <input type="text" name="profession" class="form-control"
-        placeholder="Digite a profissão" style="border-color: orange;" value="{{ old('profession') }}">
+        <input type="text" name="profession" class="form-control" placeholder="Digite a profissão" value="{{ old('profession') }}">
     </div>
 </div>
 <div class="row mt-3">
     <div class="col-sm-4">
         <label for="economic_activity">Atividade Econômica</label>
         <input type="text" name="economic_activity" class="form-control"
-        placeholder="Digite o código da atividade econômica"
-        style="border-color: orange;" value="{{ old('economic_activity') }}">
+        placeholder="Digite o código da atividade econômica" value="{{ old('economic_activity') }}">
     </div>
     <div class="col-sm-4">
         <div class="form-group">
             <label for="marital_status">Estado civil</label>
-            <select id="marital_status" name="marital_status" class="form-control"
-            style="border-color: orange;">
+            <select id="marital_status" name="marital_status" class="form-control">
             <option selected disabled="">Selecionar</option>
             <option value="Casado" @if (old('marital_status') == 'Casado') selected="selected" @endif>Casado</option>
             <option value="Divorciado" @if (old('marital_status') == 'Divorciado') selected="selected" @endif>Divorciado</option>
@@ -367,7 +360,7 @@ aria-labelledby="nav-additional-information-tab">
     <div class="form-group">
         <label for="parentage">Filiação</label>
         <textarea class="form-control" id="parentage" name="parentage" rows="2"
-        placeholder="Nome da mãe, nome do pai" style="border-color: orange;">{{ old('parentage') }}</textarea>
+        placeholder="Nome da mãe, nome do pai">{{ old('parentage') }}</textarea>
     </div>
 </div>
 </div>
@@ -375,23 +368,19 @@ aria-labelledby="nav-additional-information-tab">
     <div class="col-sm-4">
         <div class="form-group">
             <label for="naturalness">Naturalidade</label>
-            <input type="text" name="naturalness" class="form-control"
-            placeholder="Digite a cidade" style="border-color: orange;" value="{{ old('naturalness') }}">
+            <input type="text" name="naturalness" class="form-control" placeholder="Digite a cidade" value="{{ old('naturalness') }}">
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
             <label for="nationality">Nacionalidade</label>
-            <input type="text" name="nationality" class="form-control"
-            placeholder="Digite a país" style="border-color: orange;" value="{{ old('nationality') }}">
+            <input type="text" name="nationality" class="form-control" placeholder="Digite a país" value="{{ old('nationality') }}">
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
             <label for="number_client">Código do cliente</label>
-            <input type="number" name="number_client" class="form-control"
-            placeholder="Digite a código do cliente"
-            style="border-color: orange;" value="{{ old('number_client') }}">
+            <input type="number" name="number_client" class="form-control" placeholder="Digite a código do cliente" value="{{ old('number_client') }}">
         </div>
     </div>
 </div>
@@ -400,7 +389,7 @@ aria-labelledby="nav-additional-information-tab">
         <div class="form-group">
             <label for="observation">Observação</label>
             <textarea class="form-control" id="observation" name="observation" rows="3"
-            placeholder="Digite uma observação" style="border-color: orange;">{{ old('observation') }}</textarea>
+            placeholder="Digite uma observação">{{ old('observation') }}</textarea>
         </div>
     </div>
 </div>
@@ -414,8 +403,7 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-3">
         <div class="form-group">
             <label for="document_cpf">CPF<i class="bi bi-asterisk text-danger small"></i></label>
-            <input type="text" name="document_cpf" class="form-control {{ $errors->has('document_cpf') ? 'is-invalid' : '' }}" placeholder="____.____.____-___" data-mask="000.000.000-00"
-            style="border-color: orange;" value="{{ old('document_cpf') }}">
+            <input type="text" name="document_cpf" class="form-control {{ $errors->has('document_cpf') ? 'is-invalid' : '' }}" placeholder="____.____.____-___" data-mask="000.000.000-00" value="{{ old('document_cpf') }}">
 
             @if ($errors->has('document_cpf'))
             <div class="invalid-feedback">
@@ -428,7 +416,7 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-3">
         <div class="form-group">
             <label for="document_rg">RG</label>
-            <input type="text" name="document_rg" class="form-control {{ $errors->has('document_rg') ? 'is-invalid' : '' }}" placeholder="Numero /emissor / emissão" style="border-color: orange;" value="{{ old('document_rg') }}">
+            <input type="text" name="document_rg" class="form-control {{ $errors->has('document_rg') ? 'is-invalid' : '' }}" placeholder="Numero /emissor / emissão" value="{{ old('document_rg') }}">
 
             @if ($errors->has('document_rg'))
             <div class="invalid-feedback">
@@ -441,7 +429,7 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-3">
         <div class="form-group">
             <label for="document_pis">PIS</label>
-            <input type="text" name="document_pis" class="form-control {{ $errors->has('document_pis') ? 'is-invalid' : '' }}" placeholder="Numero do PIS" style="border-color: orange;" value="{{ old('document_pis') }}">
+            <input type="text" name="document_pis" class="form-control {{ $errors->has('document_pis') ? 'is-invalid' : '' }}" placeholder="Numero do PIS" value="{{ old('document_pis') }}">
 
             @if ($errors->has('document_pis'))
             <div class="invalid-feedback">
@@ -454,8 +442,7 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-3">
         <div class="form-group">
             <label for="voter_registration">Título de eleitor</label>
-            <input type="text" name="voter_registration" class="form-control"
-            placeholder="Número / zona / sessão" style="border-color: orange;" value="{{ old('voter_registration') }}">
+            <input type="text" name="voter_registration" class="form-control" placeholder="Número / zona / sessão" value="{{ old('voter_registration') }}">
         </div>
     </div>
 </div>
@@ -464,24 +451,20 @@ aria-labelledby="nav-documentation-tab">
         <div class="form-group">
             <label for="document_cnh">CNH</label>
             <input type="text" name="document_cnh" class="form-control"
-            placeholder="Número / categoria / vencimento"
-            style="border-color: orange;" value="{{ old('document_cnh') }}">
+            placeholder="Número / categoria / vencimento" value="{{ old('document_cnh') }}">
         </div>
     </div>
     <div class="col-sm-5">
         <div class="form-group">
             <label for="document_passport">Passaporte</label>
-            <input type="text" name="document_passport" class="form-control"
-            placeholder="Número / tipo / emissor / autoridade / vencimento"
-            style="border-color: orange;" value="{{ old('document_passport') }}">
+            <input type="text" name="document_passport" class="form-control" placeholder="Número / tipo / emissor / autoridade / vencimento" value="{{ old('document_passport') }}">
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
             <label for="document_reservist">Reservista</label>
             <input type="text" name="document_reservist" class="form-control"
-            placeholder="Número / espécie / categoria"
-            style="border-color: orange;" value="{{ old('document_reservist') }}">
+            placeholder="Número / espécie / categoria" value="{{ old('document_reservist') }}">
         </div>
     </div>
 </div>
@@ -496,7 +479,7 @@ aria-labelledby="nav-documentation-tab">
     <div class="col-sm-12">
         <div class="card mt-2">
             <div class="card-body text-center">
-                <button type="submit" class="btn btn-lg btn-warning text-white" data-toggle="save"
+                <button type="submit" class="btn btn-lg btn-primary" data-toggle="save"
                 title="Salvar informações"><i class="bi bi-check2-circle"></i> SALVAR</button>
             </div>
         </div>

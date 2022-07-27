@@ -40,15 +40,14 @@
                     <div class="card mt-2">
                         <div class="card-body">
                             <h4 class="text-muted"><i class="bi bi-person-square"></i> Clientes <a
-                                href="{{ route('admin.clients.create') }}" class="float-right btn btn-warning btn-lg text-white"
+                                href="{{ route('admin.clients.create') }}" class="float-right btn btn-primary btn-lg"
                                 data-toggle="novo-cliente" title="Novo Cliente"><i class="bi bi-plus-square"></i> Novo
                             Cliente</a></h4>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-inline">
-                                        <input type="search" name="" class="form-control form-control-sm"
-                                        placeholder="Buscar" style="border-color: orange;">
-                                        <button type="submit" class="btn btn-sm btn-warning"><i
+                                        <input type="search" name="" class="form-control form-control-sm" placeholder="Buscar">
+                                        <button type="submit" class="btn btn-sm btn-primary"><i
                                             class="bi bi-search text-white"></i></button>
                                         </div>
                                     </div>

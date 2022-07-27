@@ -3,10 +3,10 @@
 		<div class="modal-dialog modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-body text-muted">
-					<div class="card" style="border-color: #FFD700;">
+					<div class="card">
 						<div class="card-body">
-							<img src="{{ url('storage/' . $client->cover) }}" class="img-fluid rounded mx-auto d-block" alt="perfil">
-							<h4 class="text-muted text-center mt-2">{{ $client->name }} ({{ $client->document_cpf }})</h4>
+							<img src="{{ url('storage/' . $client->cover) }}" class="img-fluid rounded mx-auto d-block" width="200">
+							<h5 class="text-muted text-center mt-2">{{ $client->name }} ({{ $client->document_cpf }})</h5>
 						</div>
 					</div>
 				</div>
